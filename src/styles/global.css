@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  /* Canvas — warm cream, never pure white/black */
+  --color-canvas: #f6f1e7;
+  --color-canvas-ceramic: #efe8da;
+  --color-surface: #ffffff;
+  --color-surface-soft: #faf7f0;
+
+  /* Text — warm ink, never pure black */
+  --color-ink: #2a1a1a;
+  --color-body: rgb(42 26 26 / 87%);
+  --color-body-soft: rgb(42 26 26 / 60%);
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: rgb(255 255 255 / 70%);
+
+  /* 4-tier maroon — the brand anchor, replaces Starbucks' 4-tier green */
+  --color-maroon: #7a1128;        /* headings, primary brand signal */
+  --color-maroon-accent: #9c1f35; /* filled CTAs, interactive fill */
+  --color-maroon-house: #2b0a10;  /* deep bands, footer, near-black bookend */
+  --color-maroon-uplift: #5c1a26; /* secondary decorative accents */
+
+  /* Gold — reserved strictly for premium/ceremony moments (badges, top-tier package, trial credit) */
+  --color-gold: #cba258;
+  --color-gold-light: #dfc49d;
+  --color-gold-lightest: #faf6ee;
+
+  /* Semantic */
+  --color-error: #c82014;
+  --color-warning: #b8860b;
+
+  /* Typography — sans everywhere, serif only for heritage/heirloom headline moments */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  /* Radius — pill buttons, soft cards, never sharp */
+  --radius-card: 12px;
+  --radius-pill: 50px;
+
+  /* Section rhythm */
+  --spacing-section: 6.4rem;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
