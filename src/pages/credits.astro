@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import credits from "../data/image-credits.json";
+---
+
+<Layout title="Kredit Foto — Sri Ayu Bridal Artistry">
+  <Navbar />
+  <main class="bg-canvas px-6 py-16 min-h-screen">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="font-serif text-3xl text-ink mb-2">Kredit Foto</h1>
+      <p class="font-sans text-body-soft text-sm mb-10">
+        Semua foto di situs ini bersumber dari Wikimedia Commons di bawah lisensi CC BY-SA, dengan atribusi berikut.
+      </p>
+      <ul class="space-y-4">
+        {credits.map((c: any) => (
+          <li class="border-b border-black/10 pb-4">
+            <p class="font-sans text-sm text-ink">{c.title.replace(/\.(jpg|jpeg|png)$/i, "")}</p>
+            <p class="font-sans text-xs text-body-soft">
+              oleh {c.artist} · <a href={c.source} class="underline hover:text-maroon-accent" target="_blank" rel="noopener noreferrer">{c.license}</a>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</Layout>

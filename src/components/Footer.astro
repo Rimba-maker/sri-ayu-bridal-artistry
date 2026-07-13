@@ -1,0 +1,28 @@
+---
+import { footer, contact } from "../data/content";
+---
+
+<footer class="bg-maroon-house text-on-dark px-6 py-16">
+  <div class="max-w-6xl mx-auto grid gap-10 md:grid-cols-3">
+    <div>
+      <p class="font-serif text-2xl mb-3">Sri Ayu Bridal Artistry</p>
+      <p class="font-serif italic text-on-dark-soft">{footer.tagline}</p>
+    </div>
+
+    <div>
+      <p class="font-sans text-sm uppercase tracking-widest text-gold mb-3">Kontak</p>
+      <p class="font-sans text-on-dark-soft text-sm">WhatsApp: {contact.whatsappDisplay}</p>
+      <p class="font-sans text-on-dark-soft text-sm">Email: {contact.email}</p>
+    </div>
+
+    <div>
+      <p class="font-sans text-sm uppercase tracking-widest text-gold mb-3">Sosial</p>
+      <p class="font-sans text-on-dark-soft text-sm">Instagram · TikTok · Pinterest</p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row gap-2 justify-between text-xs text-on-dark-soft">
+    <p>© {new Date().getFullYear()} Sri Ayu Bridal Artistry.</p>
+    <a href="/credits" class="hover:text-gold transition-colors">Kredit Foto</a>
+  </div>
+</footer>

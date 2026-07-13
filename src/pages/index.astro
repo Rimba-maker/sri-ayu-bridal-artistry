@@ -1,25 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import TimKami from "../components/TimKami.astro";
+import Hero from "../components/Hero";
+import PainPoints from "../components/PainPoints";
+import RiasanAdat from "../components/RiasanAdat";
+import Teknik from "../components/Teknik";
+import Paket from "../components/Paket";
+import TrialSession from "../components/TrialSession";
+import Portfolio from "../components/Portfolio";
+import Testimonial from "../components/Testimonial";
+import FAQ from "../components/FAQ";
+import BookingForm from "../components/BookingForm";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      name: "Sri Ayu Bridal Artistry",
+      description:
+        "MUA pengantin spesialis riasan adat tradisional (paes, sunting, siger) dan teknik modern tahan lama.",
+      priceRange: "Rp 500.000 - Rp 12.000.000",
+      areaServed: "ID",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Riasan Pengantin",
+      provider: { "@type": "LocalBusiness", name: "Sri Ayu Bridal Artistry" },
+      areaServed: "ID",
+    },
+  ],
+};
 ---
 
 <Layout>
-  <main class="min-h-screen bg-canvas flex items-center justify-center px-6">
-    <div class="max-w-2xl text-center">
-      <p class="font-sans text-sm tracking-widest uppercase text-maroon-accent mb-4">
-        Sri Ayu Bridal Artistry
-      </p>
-      <h1 class="font-serif text-5xl text-ink mb-6">
-        Riasan Yang Bertahan Sepanjang Hari Bahagiamu.
-      </h1>
-      <p class="font-sans text-body mb-8">
-        MUA pengantin yang menguasai riasan adat tradisional sekaligus teknik modern tahan lama.
-      </p>
-      <button class="rounded-pill bg-maroon-accent text-on-dark font-sans font-semibold px-8 py-3.5 active:scale-95 transition-transform">
-        Booking Trial Makeup
-      </button>
-      <span class="ml-3 inline-block rounded-pill border border-gold text-gold font-sans text-sm px-4 py-2">
-        ⭐ Terpopuler
-      </span>
-    </div>
-  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <Navbar />
+  <Hero client:load />
+  <PainPoints client:visible />
+  <RiasanAdat client:visible />
+  <Teknik client:visible />
+  <Paket client:visible />
+  <TrialSession client:visible />
+  <TimKami />
+  <Portfolio client:visible />
+  <Testimonial client:visible />
+  <FAQ client:visible />
+  <BookingForm client:idle />
+  <Footer />
 </Layout>
